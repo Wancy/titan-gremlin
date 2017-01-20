@@ -11,7 +11,7 @@ wait_for_startup() {
     local timeout_s="$4"
 
     local now_s=`date '+%s'`
-    local stop_s=$(( $now_s + $timeout_s ))
+    local stop_s=$((now_s+timeout_s))
     local status=
 
     echo -n "Connecting to $friendly_name ($host:$port)"
