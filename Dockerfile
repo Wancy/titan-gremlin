@@ -1,16 +1,17 @@
-FROM java
+FROM java:latest
 
 LABEL Description="Titan Graph DB with Gremlin to be used with Cassandra and Elasticsearch" Version="1.0" Tags="cassandra,elasticsearch,graph,gremlin,titan"
 
-ENV TITAN_VERSION 1.0.0
+WORKDIR /opt/titan-1.0.0-hadoop1
 
-RUN wget -q -O /tmp/titan.zip http://s3.thinkaurelius.com/downloads/titan/titan-$TITAN_VERSION-hadoop2.zip
-RUN unzip -q /tmp/titan.zip -d /opt && rm /tmp/titan.zip
+RUN curl -o /opt/titan.zip http://s3.thinkaurelius.com/downloads/titan/titan-1.0.0-hadoop1.zip
 
-ENV TITAN_HOME /opt/titan-$TITAN_VERSION-hadoop2
-WORKDIR $TITAN_HOME
+RUN unzip /opt/titan.zip -d /opt/ && \
+    rm /opt/titan.zip
 
-VOLUME ["/conf","/data"]
-ADD start-gremlin.sh /opt/start-gremlin.sh
+ADD run.sh /opt/titan-1.0.0-hadoop1/
 
-CMD ["/opt/start-gremlin.sh"]
+EXPOSE 8182
+EXPOSE 8184
+
+CMD ["bash", "/opt/titan-1.0.0-hadoop1/run.sh"]
