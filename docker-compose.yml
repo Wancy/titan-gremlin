@@ -1,0 +1,14 @@
+version: '2'
+services:
+  titan:
+    image: elubow/titan-gremlin
+    depends_on:
+        - es1
+        - cas1
+    ports:
+        - "8182"
+    command: /run.sh
+  es1:
+    image: elasticsearch:1.5
+  cas1:
+    image: elubow/cassandra
