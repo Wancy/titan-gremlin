@@ -1,7 +1,7 @@
 version: '2'
 services:
   titan:
-    image: elubow/titan-gremlin
+    image: wancy/titan-gremlin
     depends_on:
         - es1
         - cas1
