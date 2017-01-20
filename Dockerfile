@@ -12,6 +12,5 @@ RUN unzip /opt/titan.zip -d /opt/ && \
 ADD run.sh /opt/titan-1.0.0-hadoop1/
 
 EXPOSE 8182
-EXPOSE 8184
 
 CMD ["bash", "/opt/titan-1.0.0-hadoop1/run.sh"]
