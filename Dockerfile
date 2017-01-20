@@ -13,3 +13,5 @@ ADD run.sh /titan/titan-1.0.0-hadoop1/
 
 EXPOSE 8182
 EXPOSE 8184
+
+CMD ["/bin/sh", "-e", "/titan/titan-1.0.0-hadoop1/run.sh"]
