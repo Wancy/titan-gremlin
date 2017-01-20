@@ -8,7 +8,7 @@ services:
     ports:
         - "8182"
     volumes:
-        - ./gremlin-server:conf/gremlin-server
+        - ./gremlin-server:/opt/titan-1.0.0-hadoop1/conf/gremlin-server
   es1:
     image: elasticsearch:1.5
   cas1:
