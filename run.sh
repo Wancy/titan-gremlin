@@ -5,10 +5,12 @@ sed -i "s/titan-berkeleyje-server.properties/titan-cassandra-server.properties/g
 sed -i "s/channelizer: org.apache.tinkerpop.gremlin.server.channel.WebSocketChannelizer/channelizer: org.apache.tinkerpop.gremlin.server.channel.HttpChannelizer/g" /opt/titan-1.0.0-hadoop1/conf/gremlin-server/gremlin-server.yaml
 
 # create the backing file
-echo "index.search.backend=elasticsearch
-index.search.hostname=100.100.101.1, 100.100.101.2
-index.search.elasticsearch.client-only=true
+echo "
 storage.backend=cassandra
-storage.hostname=localhost" > conf/gremlin-server/titan-cassandra-server.properties
+storage.hostname=localhost
+
+index.search.backend=elasticsearch
+index.search.elasticsearch.interface=NODE
+" > conf/gremlin-server/titan-cassandra-server.properties
 
 /opt/titan-1.0.0-hadoop1/bin/titan.sh start 
