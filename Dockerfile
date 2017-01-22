@@ -13,5 +13,4 @@ ADD run.sh /opt/titan-1.0.0-hadoop1/
 
 EXPOSE 8182
 
-RUN cd /opt/titan-1.0.0-hadoop1
 RUN bash run.sh
