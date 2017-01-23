@@ -14,4 +14,4 @@ index.search.elasticsearch.interface=NODE
 
 #sed -i "s/ELASTICSEARCH_IP:=127.0.0.1/ELASTICSEARCH_IP:=0.0.0.0/g" /opt/titan-1.0.0-hadoop1/bin/titan.sh
 #sed -i "s/GSRV_IP:=127.0.0.1/GSRV_IP:=0.0.0.0/g" /opt/titan-1.0.0-hadoop1/bin/titan.sh
-/opt/titan-1.0.0-hadoop1/bin/titan.sh start 
+ 
