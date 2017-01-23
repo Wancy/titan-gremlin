@@ -9,8 +9,7 @@ echo "gremlin.graph=com.thinkaurelius.titan.core.TitanFactory
 storage.backend=cassandra
 storage.hostname=localhost
 index.search.backend=elasticsearch
-index.search.elasticsearch.local-mode=true
-index.search.elasticsearch.client-only=false
+index.search.elasticsearch.interface=NODE
 " > conf/gremlin-server/titan-cassandra-server.properties
 
 /opt/titan-1.0.0-hadoop1/bin/titan.sh start 
