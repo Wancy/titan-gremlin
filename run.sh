@@ -7,9 +7,11 @@ sed -i "s/channelizer: org.apache.tinkerpop.gremlin.server.channel.WebSocketChan
 # create the backing file
 echo "gremlin.graph=com.thinkaurelius.titan.core.TitanFactory
 storage.backend=cassandra
-storage.hostname=localhost
+storage.hostname=0.0.0.0
 index.search.backend=elasticsearch
-index.search.elasticsearch.interface=NODE
+index.search.directory=/tmp/elasticsearch
+index.search.elasticsearch.local-mode=true
+index.search.elasticsearch.client-only=false
 " > conf/gremlin-server/titan-cassandra-server.properties
 
 /opt/titan-1.0.0-hadoop1/bin/titan.sh start 
