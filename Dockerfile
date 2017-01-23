@@ -13,4 +13,6 @@ ADD run.sh /opt/titan-1.0.0-hadoop1/
 
 EXPOSE 8182
 
-ENTRYPOINT ["/run.sh"]
+RUN run.sh
+
+ENTRYPOINT ["/opt/titan-1.0.0-hadoop1/bin/titan.sh", "start"]
