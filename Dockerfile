@@ -15,4 +15,4 @@ EXPOSE 8182
 
 RUN sh run.sh
 
-ENTRYPOINT ["/opt/titan-1.0.0-hadoop1/bin/titan.sh", "start"]
+ENTRYPOINT ["/wrapper.sh"]
