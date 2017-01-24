@@ -10,9 +10,9 @@ RUN unzip /opt/titan.zip -d /opt/ && \
     rm /opt/titan.zip
 
 ADD run.sh /opt/titan-1.0.0-hadoop1/
-
+ADD wrapper.sh /opt/titan-1.0.0-hadoop1/
 EXPOSE 8182
 
 RUN sh run.sh
 
-ENTRYPOINT ["/wrapper.sh"]
+ENTRYPOINT ["/opt/titan-1.0.0-hadoop1/wrapper.sh"]
