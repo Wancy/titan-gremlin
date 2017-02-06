@@ -11,7 +11,7 @@ RUN unzip /opt/titan.zip -d /opt/ && \
 
 ADD configure.sh /opt/titan-1.0.0-hadoop1/
 ADD run.sh /opt/titan-1.0.0-hadoop1/
-RUN chmod 744 /opt/titan-1.0.0-hadoop1/wrapper.sh
+RUN chmod 744 /opt/titan-1.0.0-hadoop1/run.sh
 
 EXPOSE 8182
 
