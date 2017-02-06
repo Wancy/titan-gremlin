@@ -10,11 +10,11 @@ RUN unzip /opt/titan.zip -d /opt/ && \
     rm /opt/titan.zip
 
 ADD configure.sh /opt/titan-1.0.0-hadoop1/
-ADD run.sh /opt/titan-1.0.0-hadoop1/
-RUN chmod 744 /opt/titan-1.0.0-hadoop1/run.sh
+ADD run.sh /opt/titan-1.0.0-hadoop1/bin/
+RUN chmod 744 /opt/titan-1.0.0-hadoop1/bin/run.sh
 
 EXPOSE 8182
 
 RUN sh configure.sh
 
-ENTRYPOINT ["/opt/titan-1.0.0-hadoop1/run.sh start"]
+ENTRYPOINT ["/opt/titan-1.0.0-hadoop1/bin/run.sh start"]
