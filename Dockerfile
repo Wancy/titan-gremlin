@@ -17,4 +17,4 @@ EXPOSE 8182
 
 RUN sh configure.sh
 
-ENTRYPOINT ["/opt/titan-1.0.0-hadoop1/run.sh"]
+ENTRYPOINT ["/opt/titan-1.0.0-hadoop1/run.sh start"]
